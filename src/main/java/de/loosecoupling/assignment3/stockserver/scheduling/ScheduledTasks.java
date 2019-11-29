@@ -39,7 +39,13 @@ public class ScheduledTasks {
 				int currentValue = company.getCompanyValue();
 				// Lower value
 				if (upOrDown == 0) {
-					company.setCompanyValue(currentValue - stockAdjustment);
+					// Company can't be worth less then 1 million euro
+					if (currentValue - stockAdjustment < 1) {
+						company.setCompanyValue(currentValue - stockAdjustment);
+					} else {
+						company.setCompanyValue(1);
+					}
+					
 				} else {
 					company.setCompanyValue(currentValue + stockAdjustment);
 				}
