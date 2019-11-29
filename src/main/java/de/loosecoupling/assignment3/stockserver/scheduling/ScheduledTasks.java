@@ -41,9 +41,9 @@ public class ScheduledTasks {
 				if (upOrDown == 0) {
 					// Company can't be worth less then 1 million euro
 					if (currentValue - stockAdjustment < 1) {
-						company.setCompanyValue(currentValue - stockAdjustment);
-					} else {
 						company.setCompanyValue(1);
+					} else {
+						company.setCompanyValue(currentValue - stockAdjustment);
 					}
 					
 				} else {
