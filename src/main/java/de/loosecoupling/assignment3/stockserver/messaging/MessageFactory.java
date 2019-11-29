@@ -21,7 +21,8 @@ public class MessageFactory {
 	public MapMessage generateStockServerMessage(CompanyStock stock) throws JMSException {
 		MapMessage message = activeMQSession.createMapMessage();
 		message.setJMSDestination(stockMarketTopic);
-		message.setInt(stock.getCompanyName(), stock.getCompanyValue());
+		message.setString("CompanyName", stock.getCompanyName());
+		message.setInt("CompanyValue", stock.getCompanyValue());
 		return message;	
 	}
 }

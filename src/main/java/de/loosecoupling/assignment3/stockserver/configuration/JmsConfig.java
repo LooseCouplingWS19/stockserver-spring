@@ -3,7 +3,6 @@ package de.loosecoupling.assignment3.stockserver.configuration;
 import javax.jms.DeliveryMode;
 import javax.jms.JMSException;
 import javax.jms.Session;
-import javax.jms.TemporaryTopic;
 import javax.jms.Topic;
 import javax.jms.TopicConnection;
 import javax.jms.TopicConnectionFactory;
@@ -50,11 +49,6 @@ public class JmsConfig {
 	@Bean
 	public Topic stockMarketTopic(TopicSession activeMQSession) throws JMSException {
 		return activeMQSession.createTopic("StockMarket");
-	}
-	
-	@Bean
-	public TemporaryTopic buyOrdersTopic(TopicSession activeMQSession) throws JMSException {
-		return activeMQSession.createTemporaryTopic();
 	}
 	
 	@Bean
