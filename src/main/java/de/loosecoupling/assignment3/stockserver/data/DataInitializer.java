@@ -10,8 +10,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class DataInitializer {
 
-	@Bean
-	public List<CompanyStock> stockData() {
+	public static List<CompanyStock> stockData() {
 		List<CompanyStock> data = new ArrayList<CompanyStock>();
 		
 		data.add(new CompanyStock("Porsche", 50));
